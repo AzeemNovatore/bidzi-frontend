@@ -1,0 +1,203 @@
+// forms
+
+form,
+fieldset {
+  margin: 0;
+  padding: 0;
+  border-style: none;
+}
+
+.form-group {
+  position: relative;
+  overflow: hidden;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="search"],
+input[type="password"],
+input[type="url"],
+input[type="date"],
+input[type="number"],
+textarea,
+.form-control,
+.form-select,
+select {
+  -webkit-border-radius: 0;
+  height: 52px;
+  line-height: 64px;
+  width: 100%;
+  padding: 10px 10px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: $light-white;
+  letter-spacing: 0.02em;
+  background-color: $primary-black;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+
+  @include media("<tablet-x") {
+    height: 54px;
+    line-height: 54px;
+  }
+
+  &:focus,
+  &:hover {
+    box-shadow: none;
+    outline: none;
+    border-color: $primary-yellow !important;
+    color: $light-white;
+
+    @include placeholder {
+      color: $light-white;
+    }
+  }
+
+  @include placeholder {
+    color: #9e9e9e;
+  }
+}
+
+select,
+.form-select {
+  -webkit-appearance: none;
+}
+
+textarea {
+  resize: none;
+  vertical-align: top;
+  height: 134px;
+  line-height: 15px;
+  color: rgba(255, 255, 255, 0.4);
+  padding: 20px;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="file"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  cursor: pointer;
+}
+
+.radio {
+  padding: 0;
+
+  &.radio-card {
+    display: block;
+    position: relative;
+    border: none;
+    flex: 1 0 47%;
+
+    @include media("<tablet") {
+      flex: 1 0 100%;
+    }
+
+    input[type="radio"] {
+      &:checked~ {
+        label {
+          background: #fff8e6;
+          border: 3px solid #febd09;
+        }
+      }
+    }
+
+    label {
+      padding: 130px 30px 50px;
+      width: 100%;
+      height: auto;
+      background: #fff;
+      color: $primary-black;
+      border: 1px solid #e0e0e0;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 58px;
+      cursor: pointer;
+      position: relative;
+      text-align: center;
+      @include ease;
+      max-height: 500px;
+      min-height: 500px;
+      @include flex-align-center;
+      flex-direction: column;
+      gap: 100px;
+
+      @include media("<tablet-x") {
+        padding: 90px 20px 25px;
+        max-height: 400px;
+        min-height: 400px;
+        gap: 50px;
+      }
+
+      @include media("<phone") {
+        padding: 60px 15px 15px;
+        max-height: 300px;
+        min-height: 300px;
+        gap: 20px;
+      }
+    }
+
+    .img-box {
+      max-width: 270px;
+      margin: 0 auto;
+
+      @include media("<phone") {
+        max-width: 160px;
+      }
+
+      &.company {
+        max-width: 350px;
+
+        @include media("<phone") {
+          max-width: 220px;
+        }
+      }
+    }
+  }
+
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+
+    &:checked~ {
+      label {
+        &:after {
+          content: "\f111";
+          font-family: $awesome;
+          background: $white;
+          border-color: $primary-yellow;
+          color: $primary-yellow;
+        }
+      }
+    }
+  }
+
+  label {
+    &:after {
+      content: "";
+      width: 46px;
+      height: 46px;
+      display: block;
+      border: 4px solid #e0e0e0;
+      position: absolute;
+      top: 34px;
+      right: 34px;
+      font-size: 28px;
+      border-radius: 50%;
+      @include flex-align-center;
+      font-weight: 900;
+
+      @include media("<phone") {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+      }
+    }
+  }
+}

@@ -1,0 +1,749 @@
+$breakpoints: (
+  "xs-phone": 580px,
+  "phone": 640px,
+  "tablet": 768px,
+  "tablet-x": 992px,
+  "desktop": 1024px,
+  "widescreen": 1200px,
+  "widescreen-large": 1400px,
+);
+
+@import "vendors/include-media";
+@import "vendors/normalize";
+@import "vendors/fonts";
+@import "vendors/bootstrap";
+@import "vendors/fontawesome";
+@import "vendors/fontawesomefive";
+@import "vendors/slick";
+
+@import "base/variables";
+@import "base/functions";
+@import "base/mixins";
+@import "base/helpers";
+@import "base/reset";
+@import "base/typography";
+@import "base/forms";
+@import "vendors/login";
+@import "vendors/sociallinks";
+@import "vendors/style";
+
+body {
+  font-size: 14px;
+  line-height: 18px;
+  font-family: $popins;
+  color: $primary-black;
+}
+
+.container-fluid {
+  padding: 0px 126px;
+
+  @include media("<phone") {
+    padding: 0px 15px;
+  }
+}
+
+button,
+a {
+  color: $white;
+  @include ease;
+  text-decoration: none;
+
+  &:hover {
+    color: $primary-yellow;
+    text-decoration: none;
+  }
+
+  &:focus {
+    color: $primary-yellow;
+    outline: none;
+    box-shadow: none;
+    text-decoration: none;
+  }
+}
+
+button,
+input[type="submit"],
+.btn {
+  position: relative;
+  height: 55px;
+  line-height: 68px;
+  font-weight: 600;
+  font-size: 18px;
+  border: 1px solid #ffff;
+  padding: 0 40px;
+  text-align: center;
+  border-radius: 4px;
+  transition: all ease 0.3s;
+  text-transform: capitalize;
+  color: $primary-black;
+  background: $primary-yellow;
+  @include ease;
+  text-transform: capitalize;
+
+  @include media("<tablet-x") {
+    padding: 0 25px;
+    height: 50px;
+    line-height: 48px;
+  }
+
+  @include media("<phone") {
+    font-size: 16px;
+  }
+
+  &:hover {
+    background: $white;
+    color: $primary-black;
+  }
+
+  &:focus {
+    box-shadow: none;
+    outline: none;
+    background: $white;
+    color: $primary-black;
+  }
+
+  &.view {
+    max-width: 282px;
+  }
+
+  &.accept {
+    border-radius: 20px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.transparent {
+    background: transparent;
+    color: #ffff !important;
+    padding: 10px 44px !important;
+
+    &:hover,
+    &:focus {
+      background: $primary-yellow;
+      color: $primary-black;
+    }
+  }
+}
+
+.img-box {
+  overflow: hidden;
+  position: relative;
+
+  img {
+    @include img-reset;
+
+    &.ful-width {
+      width: 100%;
+    }
+  }
+}
+
+img {
+  &.ful-width {
+    width: 100%;
+  }
+}
+
+.price {
+  background: rgba(194, 4, 241, 0.36);
+  border-radius: 20px;
+}
+
+#wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  @include ease;
+
+  &.header-fixed {
+    #header {
+    }
+  }
+
+  &.nav-active {
+    #nav {
+      left: 0;
+    }
+  }
+}
+
+#header {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  @include ease;
+  padding: 30px 0;
+
+  @include media("<tablet-x") {
+    height: auto;
+    padding: 15px 0;
+  }
+
+  // .container{
+  // 	@extend %clearfix;
+  // }
+}
+
+.nav-opener {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #f7af7e;
+  font-size: 20px;
+  margin: 5px 0px;
+  float: right;
+  display: none;
+  transition: all ease 0.3s;
+  @include ease;
+
+  @include media("<tablet-x") {
+    display: block;
+  }
+}
+
+#second-logo {
+  display: none;
+
+  @include media("<tablet-x") {
+    display: block;
+  }
+}
+
+#nav {
+  @include flex-align;
+  justify-content: space-between;
+  width: 100%;
+  @include ease;
+
+  @include media("<1500px") {
+    width: 100%;
+  }
+
+  @include media("<widescreen-large") {
+    width: 100%;
+  }
+
+  @include media("<tablet-x") {
+    flex-direction: column;
+    justify-content: start;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    padding: 20px 0 0;
+    width: 250px;
+    left: -290px;
+    background: linear-gradient(298.88deg, #674833 38.54%, #2e312d 98.54%);
+    z-index: 999;
+    box-shadow: 0px 20px 40px rgba(117, 117, 117, 0.2);
+  }
+
+  .nav-opener {
+    position: absolute;
+    top: 0;
+    right: -30px;
+    display: none;
+    margin: 0;
+    background: $primary-yellow;
+    color: #fff;
+
+    @include media("<tablet-x") {
+      display: block;
+    }
+  }
+
+  .logo {
+    max-width: 170px;
+
+    @include media("<tablet-x") {
+      display: block;
+    }
+  }
+
+  ul {
+    @extend %listreset;
+    position: relative;
+    overflow: hidden;
+    z-index: 9999;
+    @include flex-align;
+    gap: 50px;
+
+    @include media("<widescreen") {
+      gap: 30px;
+    }
+
+    @include media("<tablet-x") {
+      width: 100%;
+      flex-direction: column;
+      align-items: start;
+      gap: 0;
+      height: 100%;
+      overflow: hidden;
+      max-height: 400px;
+      overflow-y: scroll;
+      padding-top: 20px;
+    }
+
+    li {
+      display: inline-block;
+      letter-spacing: 0;
+
+      @include media("<tablet-x") {
+        padding: 0 30px;
+        width: 100%;
+      }
+    }
+
+    a {
+      display: block;
+      padding: 10px 0;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 30px;
+      color: $white;
+
+      @include media("<widescreen") {
+        padding: 15px 0;
+      }
+
+      &:hover,
+      &.active {
+        color: $primary-yellow;
+      }
+    }
+
+    &.nav-btn {
+      gap: 30px;
+      margin-left: auto;
+
+      @include media("<tablet-x") {
+        gap: 15px;
+        align-items: center;
+        height: auto;
+        overflow: hidden;
+        margin-top: auto;
+      }
+
+      li {
+        @include media("<tablet-x") {
+          border: 0;
+        }
+      }
+
+      a {
+        color: $primary-black;
+
+        @include media("<tablet-x") {
+          text-align: center;
+        }
+
+        &.btn {
+          padding: 0 40px;
+          line-height: 68px;
+
+          @include media("<tablet-x") {
+            padding: 0 25px;
+            height: 50px;
+            line-height: 48px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.main-header {
+  background: $primary-gradiant;
+
+  // banner section
+  .banner-section {
+    @include flex-align;
+    height: 100vh;
+
+    @include media("<xs-phone") {
+      height: 300px;
+    }
+
+    .banner-content {
+      @include media("<xs-phone") {
+        text-align: center;
+      }
+
+      h1 {
+        font-weight: 700;
+        font-size: 78.0364px;
+        line-height: 117px;
+        color: $white;
+        max-width: 1007.02px;
+
+        @include media("<xs-phone") {
+          font-size: 30.0364px;
+          line-height: 46px;
+          max-width: 100%;
+        }
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 31px;
+        line-height: 46px;
+        color: $white;
+
+        @include media("<xs-phone") {
+          font-size: 16px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+}
+
+// main
+
+#main {
+  position: relative;
+  background: $primary-black;
+}
+
+// car-styling
+.card-section {
+  padding: 95px 0px;
+
+  @include media("<tablet") {
+    padding: 40px 0px;
+  }
+
+  .card {
+    position: relative;
+    border: none;
+    background: none !important;
+    margin-bottom: 80px;
+
+    @include media("<tablet") {
+      margin-bottom: 20px;
+    }
+
+    .card-img {
+      img {
+        border-radius: 20px;
+        @include img-reset;
+      }
+    }
+
+    .card-content {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-between;
+      width: 100%;
+
+      .card-tag {
+        padding: 18px 0px 0px 22px;
+
+        @include media("<xs-phone") {
+          padding: 20px 20px;
+        }
+
+        .card-text {
+          font-weight: 400;
+          font-size: 25px;
+          line-height: 38px;
+          color: $white;
+          background: rgba(0, 0, 0, 0.6);
+          backdrop-filter: blur(20px);
+          border-radius: 20px;
+          padding: 15px 29px;
+          display: inline-block;
+
+          @include media("<xs-phone") {
+            font-size: 18px;
+            line-height: 38px;
+            padding: 10px 29px;
+          }
+        }
+      }
+
+      .card-description {
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+
+        .price-card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+          padding: 10px 0px;
+          text-align: center;
+          height: 100%;
+
+          @include media("<xs-phone") {
+            padding: 0;
+            gap: 0;
+          }
+
+          .title-value {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 30px;
+            color: $light-white;
+
+            @include media("<xs-phone") {
+              font-size: 18px;
+            }
+          }
+
+          .price-value {
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 39px;
+            color: $white;
+
+            @include media("<phone") {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// footer styling
+#footer {
+  position: relative;
+  background: $primary-black;
+
+  .container-fluid {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+    .footer-left {
+      padding: 100px 0px 140px 0px;
+
+      @include media("<tablet") {
+        padding: 50px 0px 0px 0px;
+        text-align: center;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 38px;
+        color: $light-white;
+        margin-top: 25px;
+
+        @include media("<tablet") {
+          font-size: 14px;
+          line-height: 24px;
+        }
+      }
+    }
+
+    .footer-right {
+      display: flex;
+      justify-content: space-between;
+      padding: 100px 0px;
+
+      @include media("<widescreen") {
+        gap: 50px;
+      }
+
+      @include media("<tablet") {
+        padding: 10px 0px 30px 0px;
+        gap: 30px;
+      }
+
+      .faq,
+      .company {
+        @include media("<tablet") {
+          text-align: right;
+        }
+
+        h1 {
+          font-weight: 500;
+          font-size: 34.6193px;
+          line-height: 52px;
+          text-transform: uppercase;
+          color: $white;
+
+          @include media("<widescreen") {
+            font-size: 28px;
+            line-height: 45px;
+          }
+
+          @include media("<tablet") {
+            font-size: 20px !important;
+            line-height: 40px;
+          }
+        }
+
+        .footer-links {
+          list-style: none;
+          padding: 0;
+
+          li {
+            padding: 10px 0px;
+
+            @include media("<tablet") {
+              padding: 5px 0px;
+            }
+
+            a {
+              font-weight: 400;
+              font-size: 25px;
+              line-height: 38px;
+              color: $light-white;
+
+              @include media("<widescreen") {
+                font-size: 20px;
+              }
+
+              @include media("<tablet") {
+                font-size: 16px;
+              }
+
+              &:hover,
+              &.active {
+                color: $primary-yellow;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.faq {
+  @include media("<tablet") {
+    text-align: left !important;
+  }
+}
+
+.animation-top {
+  animation: animationTop 2s forwards;
+}
+
+.animation-right {
+  animation: animationRight 2s forwards;
+}
+
+.animation-left {
+  animation: animationLeft 2s forwards;
+}
+
+@keyframes animationTop {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes animationRight {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes animationLeft {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.reveal {
+  &.top {
+    transform: translateY(-500px);
+    opacity: 0;
+    transition: all ease 2s;
+
+    &.active {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  &.right {
+    transform: translateX(1000px);
+    opacity: 0;
+    transition: all ease 2s;
+
+    &.active {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  &.left {
+    transform: translateX(-1000px);
+    opacity: 0;
+    transition: all ease 2s;
+
+    &.active {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  &.delay-1 {
+    transition-delay: 0s;
+  }
+
+  &.delay-2 {
+    transition-delay: 0.5s;
+  }
+
+  &.delay-3 {
+    transition-delay: 1s;
+  }
+
+  &.delay-4 {
+    transition-delay: 1.5s;
+  }
+
+  &.delay-5 {
+    transition-delay: 2s;
+  }
+
+  &.delay-6 {
+    transition-delay: 2.5s;
+  }
+}
+
+.scrollbar-color {
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: $primary-yellow;
+  }
+}
+
+@include media("<tablet") {
+}
