@@ -32,10 +32,15 @@ body {
   line-height: 18px;
   font-family: $popins;
   color: $primary-black;
+  background: $primary-black;
 }
 
 .container-fluid {
   padding: 0px 126px;
+
+  @media only screen and (max-width: 1400px) and (min-width: 360px) {
+    padding: 0px 30px;
+  }
 
   @include media("<phone") {
     padding: 0px 15px;
@@ -65,12 +70,13 @@ button,
 input[type="submit"],
 .btn {
   position: relative;
+  min-width: 192px;
   height: 55px;
-  line-height: 68px;
+  line-height: 55px !important;
   font-weight: 600;
   font-size: 18px;
   border: 1px solid #ffff;
-  padding: 0 40px;
+  padding: 0 40px !important;
   text-align: center;
   border-radius: 4px;
   transition: all ease 0.3s;
@@ -119,7 +125,7 @@ input[type="submit"],
   &.transparent {
     background: transparent;
     color: #ffff !important;
-    padding: 10px 44px !important;
+    // padding: 10px 44px !important;
 
     &:hover,
     &:focus {
@@ -169,6 +175,18 @@ img {
       left: 0;
     }
   }
+
+  &.sidebar-active {
+    .sidebar {
+      left: 0;
+    }
+    .sidebar-opener {
+      left: 250px;
+      i {
+        transform: rotate(180deg);
+      }
+    }
+  }
 }
 
 #header {
@@ -208,7 +226,7 @@ img {
   }
 }
 
-#second-logo {
+.logo {
   display: none;
 
   @include media("<tablet-x") {
@@ -260,7 +278,7 @@ img {
 
   .logo {
     max-width: 170px;
-
+    display: block;
     @include media("<tablet-x") {
       display: block;
     }
@@ -369,8 +387,10 @@ img {
     @include media("<xs-phone") {
       height: 300px;
     }
-
     .banner-content {
+      @include media("<tablet-x") {
+        text-align: center;
+      }
       @include media("<xs-phone") {
         text-align: center;
       }
@@ -381,6 +401,10 @@ img {
         line-height: 117px;
         color: $white;
         max-width: 1007.02px;
+        @include media("<tablet-x") {
+          font-size: 50.0364px;
+          line-height: 90px;
+        }
 
         @include media("<xs-phone") {
           font-size: 30.0364px;
@@ -399,6 +423,31 @@ img {
           font-size: 16px;
           line-height: 30px;
         }
+      }
+    }
+    &.banner-search {
+      align-items: flex-start;
+      height: auto;
+      h1 {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 72px;
+        margin: 0 auto 38px;
+      }
+      .search-box {
+        max-width: 705px;
+        margin: 0 auto 45px;
+        display: flex;
+        .btn {
+          height: 64px !important;
+          line-height: 64px !important;
+        }
+      }
+      input[type="search"] {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 5px 0px 0px 5px;
+        height: 44px;
+        line-height: 45px;
       }
     }
   }
@@ -479,8 +528,9 @@ img {
           display: flex;
           flex-direction: column;
           align-items: center;
+          justify-content: center;
           gap: 10px;
-          padding: 10px 0px;
+          padding: 10px;
           text-align: center;
           height: 100%;
 
@@ -516,106 +566,119 @@ img {
   }
 }
 
+.filter-row {
+  padding: 38px 0 44px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  select,
+  .form-select {
+    height: 60px;
+    line-height: 60px;
+  }
+}
+
+.filter-result {
+  padding: 30px 0;
+  @include flex-align;
+  justify-content: space-between;
+  span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 46px;
+    color: rgba(255, 255, 255, 0.4);
+  }
+  select,
+  .form-select {
+    min-width: 192px;
+    height: 64px;
+    line-height: 64px;
+  }
+}
+
 // footer styling
 #footer {
   position: relative;
   background: $primary-black;
-
+  .logo {
+    display: block;
+  }
   .container-fluid {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
-
     .footer-left {
       padding: 100px 0px 140px 0px;
-
       @include media("<tablet") {
         padding: 50px 0px 0px 0px;
         text-align: center;
       }
-
       p {
         font-weight: 400;
         font-size: 25px;
         line-height: 38px;
         color: $light-white;
         margin-top: 25px;
-
         @include media("<tablet") {
           font-size: 14px;
           line-height: 24px;
         }
       }
     }
-
     .footer-right {
       display: flex;
       justify-content: space-between;
       padding: 100px 0px;
-
       @include media("<widescreen") {
         gap: 50px;
       }
-
       @include media("<tablet") {
         padding: 10px 0px 30px 0px;
         gap: 30px;
       }
-
       .faq,
       .company {
         @include media("<tablet") {
           text-align: right;
         }
-
         h1 {
           font-weight: 500;
           font-size: 34.6193px;
           line-height: 52px;
           text-transform: uppercase;
           color: $white;
-
           @include media("<widescreen") {
             font-size: 28px;
             line-height: 45px;
           }
-
           @include media("<tablet") {
             font-size: 20px !important;
             line-height: 40px;
           }
         }
-
-        .footer-links {
-          list-style: none;
-          padding: 0;
-
-          li {
-            padding: 10px 0px;
-
-            @include media("<tablet") {
-              padding: 5px 0px;
-            }
-
-            a {
-              font-weight: 400;
-              font-size: 25px;
-              line-height: 38px;
-              color: $light-white;
-
-              @include media("<widescreen") {
-                font-size: 20px;
-              }
-
-              @include media("<tablet") {
-                font-size: 16px;
-              }
-
-              &:hover,
-              &.active {
-                color: $primary-yellow;
-              }
-            }
-          }
-        }
+      }
+    }
+  }
+}
+.footer-links {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0px;
+    @include media("<tablet") {
+      padding: 5px 0px;
+    }
+    a {
+      font-weight: 400;
+      font-size: 25px;
+      line-height: 38px;
+      color: $light-white;
+      @include media("<widescreen") {
+        font-size: 20px;
+      }
+      @include media("<tablet") {
+        font-size: 16px;
+      }
+      &:hover,
+      &.active {
+        color: $primary-yellow;
       }
     }
   }
@@ -745,5 +808,54 @@ img {
   }
 }
 
+// Pagination
+.pagination {
+  li {
+    &.active {
+      a {
+        background: $light-pink !important;
+        color: #fff !important;
+      }
+    }
+    a {
+      background-color: #293b3f !important ;
+      width: 30px;
+      height: 30px;
+      border-radius: 50% !important;
+      border: none;
+      padding: 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      &:hover,
+      &:active {
+        background: $light-pink !important;
+        color: #fff !important;
+      }
+    }
+  }
+}
+.page-item {
+  margin-left: 30px;
+}
+.arrow-icon {
+  background-color: #293b3f !important ;
+  width: 30px;
+  height: 30px;
+  border-radius: 50% !important;
+  border: none;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 40px;
+  i {
+    color: #fff;
+  }
+}
+.arrow-icon-right {
+  margin-left: 40px !important;
+}
 @include media("<tablet") {
 }

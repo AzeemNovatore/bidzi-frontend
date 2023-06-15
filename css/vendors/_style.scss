@@ -1,11 +1,30 @@
 // Seller Dashboard
-#seller-dashboard {
+.bg-dashbaord {
     background-color: $primary-black;
     min-height: 100vh;
 
 }
 
+.main-sidebar {
+    width: 30%;
 
+    @include media("<widescreen") {
+        width: 0;
+    }
+}
+
+.sidebar-opener {
+    display: none;
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    z-index: 999;
+
+    @include media("<widescreen") {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
 
 .seller-dashboard-header {
     padding-bottom: 0 !important;
@@ -23,22 +42,42 @@
         margin-top: 20px;
         margin-bottom: 100px;
 
+        @include media("<widescreen") {
+            position: fixed;
+            left: -260px;
+            top: 0;
+            bottom: 0;
+            width: 250px;
+            z-index: 99999;
+            margin: 0;
+            border-radius: 0 40px 40px 0;
+            @include ease;
+        }
+
         ul {
             padding: 0;
 
             li {
                 list-style: none;
-                padding: 10px 27px;
+
+                a.active {
+                    font-weight: 700;
+                    font-size: 20px;
+                    line-height: 30px;
+                    background: rgba(255, 255, 255, 0.1);
+                    border-right: 9px solid #C204F1;
+                }
 
                 a {
+                    padding: 29px 27px;
                     @include dashboard-list;
                     display: flex;
                     gap: 31px;
-                    padding: 19px 0;
 
-                   
+
+
                 }
-                
+
 
             }
         }
@@ -47,16 +86,33 @@
     .dashboard-table {
         background: rgba(0, 0, 0, 0.2);
         backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         padding: 25px 20px;
         border-radius: 10px 10px 0px 0px;
-        margin-left: 30px;
+        margin-left: 15px;
         row-gap: 25px;
         height: 100%;
+        width: 100%;
+
+        @include media("<widescreen") {
+            margin-top: 50px;
+            height: 100%;
+        }
 
 
         .searchbar-field {
+            @include media("<tablet") {
+                flex-direction: column;
+                gap: 20px;
+            }
+
             .search-icon {
                 position: relative;
+
+                @include media("<tablet") {
+                    width: 100%;
+                    display: flex;
+                }
 
                 input {
                     -webkit-border-radius: 0;
@@ -65,7 +121,7 @@
                     padding: 20px;
                     font-weight: 400;
                     font-size: 16px;
-                    padding: 10px 20px;
+                    padding: 10px 40px 10px 20px;
                     letter-spacing: 0.02em;
                     color: $white !important;
                     border: 1px solid transparent;
@@ -75,10 +131,18 @@
                     font-family: $popins;
                     padding-left: 55px;
 
+
                     @include media("<tablet-x") {
-                        height: 40px;
+
                         line-height: 54px;
+                        width: 250px;
                     }
+
+                    @include media("<tablet") {
+                        width: 100%;
+                    }
+
+
                 }
 
                 &::before {
@@ -86,6 +150,8 @@
                     position: absolute;
                     top: 14px;
                     left: 16px;
+
+
                 }
 
                 &::after {
@@ -93,6 +159,8 @@
                     position: absolute;
                     top: 20px;
                     right: 16px;
+
+
                 }
             }
 
@@ -103,7 +171,8 @@
                     width: 24px !important;
                     height: 24px !important;
                     border: 1px solid $white;
-                    border-radius: 5px;
+                    border-radius: 7px !important;
+                    accent-color: transparent !important;
                 }
 
                 p {
@@ -140,8 +209,17 @@
                             line-height: 33px;
                             color: $light-grey;
 
-                            @media only screen and (max-width: 1600px) and (min-width: 360px) {
-                                padding: 35px 20px;
+                            @include media("<tablet-x") {
+                                font-size: 14px;
+                                white-space: nowrap;
+                            }
+
+                            @media only screen and (max-width: 1600px) and (min-width: 992px) {
+                                padding: 35px 10px;
+                            }
+
+                            @include media("<tablet-x") {
+                                padding: 10px;
                             }
 
                             img {
@@ -150,11 +228,16 @@
                             }
 
                             .accept {
-                                padding: 3px 5px;
+                                padding: 3px 15px;
                                 height: auto;
                                 color: #74a303;
                                 border: 1px solid #74a303;
                                 background: rgba(116, 163, 3, 0.1);
+
+                                @include media("<tablet") {
+                                    font-size: 12px;
+                                    white-space: nowrap;
+                                }
                             }
 
                             .pending {
@@ -178,6 +261,11 @@
                                 border: 1px solid rgba(255, 255, 255, 0.4);
                                 border-radius: 5px;
                                 padding: 7px 15px;
+
+                                @include media("<tablet") {
+                                    font-size: 12px;
+                                    white-space: nowrap;
+                                }
                             }
 
                             .Reject {
@@ -189,6 +277,11 @@
                                 font-weight: 500;
                                 font-size: 20px;
                                 line-height: 30px;
+
+                                @include media("<tablet") {
+                                    font-size: 12px;
+                                    white-space: nowrap;
+                                }
                             }
 
                             &:nth-child(1) {
@@ -222,8 +315,13 @@
                                 font-family: $popins;
                                 color: $black;
 
-                                @media only screen and (max-width: 1600px) and (min-width: 360px) {
+                                @media only screen and (max-width: 1600px) and (min-width: 992px) {
                                     font-size: 20px;
+                                }
+
+                                @include media("<tablet-x") {
+                                    font-size: 14px;
+                                    white-space: nowrap;
                                 }
                             }
                         }
@@ -238,8 +336,9 @@
 .analytics-value {
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(17.789px);
+    -webkit-backdrop-filter: blur(17.789px);
     border-radius: 17.789px;
-    min-height: 345px;
+    height: 100%;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -247,11 +346,28 @@
     justify-content: center;
     padding: 20px;
 
+    @media only screen and (max-width: 1600px) and (min-width: 992px) {
+        min-height: 226px;
+    }
+
     h1 {
         font-weight: 700;
         font-size: 92.5028px;
         line-height: 139px;
         color: #ffffff;
+
+        @media only screen and (max-width: 1600px) and (min-width: 992px) {
+            font-size: 50px;
+            margin-bottom: 20px;
+            line-height: 70px;
+
+        }
+
+        @include media("<tablet-x") {
+            font-size: 20px !important;
+            line-height: 30px !important;
+        }
+
     }
 
     p {
@@ -259,6 +375,14 @@
         font-size: 25px;
         line-height: 38px;
         color: rgba(255, 255, 255, 0.7);
+
+        @media only screen and (max-width: 1600px) and (min-width: 992px) {
+            font-size: 20px;
+        }
+
+        @include media("<tablet-x") {
+            font-size: 16px;
+        }
     }
 }
 
@@ -266,6 +390,9 @@
 .question-listing {
     padding: 40px;
 
+    @include media("<phone") {
+        padding: 10px;
+    }
 
     h1 {
         font-weight: 700;
@@ -273,6 +400,10 @@
         line-height: 35px;
         color: $white;
         margin-bottom: 30px;
+
+        @include media("<phone") {
+            font-size: 16px;
+        }
     }
 
     a {
@@ -304,11 +435,19 @@
             padding: 19px;
             margin-bottom: 10px;
 
+            @include media("<phone") {
+                font-size: 14px;
+            }
+
         }
 
         textarea {
             margin-bottom: 19px;
+            border: none;
 
+            @include media("<phone") {
+                font-size: 14px;
+            }
         }
     }
 }
@@ -320,12 +459,20 @@
     padding: 40px;
     height: 100%;
 
+    @include media("<phone") {
+        padding: 10px;
+    }
+
     h1 {
         font-weight: 700;
         font-size: 23.1341px;
         line-height: 35px;
         color: $white;
         margin-bottom: 40px;
+
+        @include media("<phone") {
+            font-size: 16px;
+        }
     }
 
     ul {
@@ -339,11 +486,298 @@
             list-style: none;
             margin-bottom: 30px;
 
+            @include media("<phone") {
+                font-size: 14px;
+            }
+
             span {
                 font-weight: 700;
                 font-size: 20px;
                 line-height: 30px;
+
+                @include media("<phone") {
+                    font-size: 14px;
+                }
             }
         }
+    }
+}
+
+// Chat Section
+.chat-dashboard {
+    @include media("<phone") {
+        padding: 0 !important;
+    }
+
+    .chat-content {
+        padding: 10px 0;
+
+        .search-icon {
+
+            display: flex;
+            width: 100%;
+            margin-bottom: 30px;
+
+            input {
+                width: 100% !important;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 22px;
+                letter-spacing: 0.02em;
+                color: $white;
+
+            }
+        }
+
+        .inner-chat-content.active {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+        }
+
+        .inner-chat-content {
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 10px;
+
+            @include media("<phone") {
+                padding: 10px;
+            }
+
+            .chat-user-img {
+                position: relative;
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    right: 0;
+                    top: 0;
+                    background: #93BF28;
+                    width: 13.96px;
+                    height: 13.96px;
+                    border-radius: 50%;
+                }
+            }
+
+            .user-name {
+                margin-bottom: 10px;
+
+                h3 {
+                    font-weight: 600;
+                    font-size: 17px;
+                    line-height: 21px;
+                    color: $white;
+                    margin-bottom: 0;
+
+                    @include media("<phone") {
+                        font-size: 11px;
+                    }
+                }
+
+                p {
+                    font-weight: 400;
+                    font-size: 16.2064px;
+                    line-height: 20px;
+                    color: $white;
+                    margin-bottom: 0;
+
+                    @include media("<phone") {
+                        font-size: 11px;
+                    }
+
+                }
+            }
+
+            .user-message {
+
+
+                p {
+                    font-weight: 400;
+                    font-size: 16.2064px;
+                    line-height: 20px;
+                    color: rgba(255, 255, 255, 0.7);
+                    margin-bottom: 0;
+
+                    @include media("<phone") {
+                        font-size: 11px;
+                    }
+
+
+                }
+
+                span {
+                    font-weight: 500;
+                    font-size: 16.2064px;
+                    line-height: 20px;
+                    color: $white;
+                    padding: 2px 8px 1px 6px;
+                    background: #C204F1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+
+                    @include media("<phone") {
+                        font-size: 11px;
+                    }
+                }
+
+            }
+        }
+    }
+
+    .user-inbox {
+        padding: 10px 0;
+
+        .inbox-heading {
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 12px 40px;
+
+            .user-img-chats {
+
+                img {
+                    @include media("<phone") {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+
+            @include media("<phone") {
+                padding: 10px;
+            }
+
+
+
+            h3 {
+                font-weight: 500;
+                font-size: 26px;
+                line-height: 32px;
+                color: $white;
+
+                @include media("<phone") {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .inbox-chating {
+            background: #3E4B4E;
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            min-height: 700px;
+            max-height: 700px;
+
+
+            @include media("<phone") {
+                min-height: 420px;
+                max-height: 420px;
+                padding: 5px;
+            }
+
+            .inner-inbox-chating {
+                min-height: 520px;
+                max-height: 520px;
+                margin-bottom: 30px;
+                overflow-y: auto;
+                overflow-x: hidden;
+
+                @include media("<phone") {
+                    min-height: 300px;
+                    max-height: 300px;
+                }
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                ul {
+                    padding: 0;
+
+                    .send-chat {
+                        background: #3C4649 !important;
+                        border-radius: 20px 20px 20px 0px;
+                        float: left;
+                        margin-right: 30px;
+                    }
+
+                    .recive-chat {
+
+                        background: #C204F1;
+                        border-radius: 20px 20px 0px 20px;
+                        float: right;
+                        margin-left: 30px;
+                    }
+
+                    li {
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 18.21px;
+                        line-height: 22px;
+                        color: rgba(255, 255, 255, 0.96);
+                        margin-bottom: 25px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        padding: 20px;
+                        list-style: none;
+
+                        @include media("<phone") {
+                            font-size: 12px;
+                        }
+
+
+                    }
+                }
+            }
+
+
+            .chat-search-field {
+                border-top: 1px solid rgba(255, 255, 255, 0.3);
+                padding: 20px 0 0 0;
+
+                @include media("<phone") {
+                    padding: 10px;
+                }
+
+                img {
+
+                    @include media("<phone") {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+
+                input {
+                    border: none;
+
+                    border-radius: 0px;
+                    padding: 0;
+                    background: transparent;
+
+                    @include media("<phone") {
+                        font-size: 12px;
+                    }
+
+                    &::placeholder {
+                        font-weight: 400;
+                        font-size: 20px;
+                        line-height: 24px;
+                        color: rgba(255, 255, 255, 0.4);
+
+                        @include media("<phone") {
+                            font-size: 12px;
+                        }
+
+                    }
+                }
+            }
+        }
+
     }
 }

@@ -8,7 +8,7 @@
     <link media="all" rel="stylesheet" type="text/css" href="css/main.css" />
   </head>
   <body>
-    <div id="seller-dashboard">
+    <div id="wrapper" class="bg-dashbaord">
       <header id="header" class="seller-dashboard-header">
         <div class="container-fluid">
           <a href="#" class="nav-opener">
@@ -42,9 +42,12 @@
       </header>
       <div class="inner-dashboard">
         <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-3">
-              <div class="sidebar">
+          <div class="d-flex">
+            <div class="main-sidebar">
+              <a href="#" class="sidebar-opener"
+                ><i class="fas fa-chevron-double-right"></i
+              ></a>
+              <div class="sidebar" id="sidebar">
                 <ul>
                   <li>
                     <a href=""
@@ -53,7 +56,7 @@
                     >
                   </li>
                   <li>
-                    <a href="./Analytics.html"
+                    <a href="./Analytics.html" class="active"
                       ><img
                         src="./images/analytic-icon.svg"
                         alt=""
@@ -61,7 +64,7 @@
                     >
                   </li>
                   <li>
-                    <a href=""
+                    <a href="./Chat.html"
                       ><img src="./images/chat-icon.svg" alt="" />Chat</a
                     >
                   </li>
@@ -85,46 +88,46 @@
                 </ul>
               </div>
             </div>
-            <div class="col-lg-9">
+
               <div class="row dashboard-table">
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-lg-4 col-md-6 col-sm-12">
                   <div class="analytics-value">
                     <h1>357</h1>
                     <p>Total Views</p>
                   </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-md-6 col-sm-12">
                   <div class="analytics-value">
                     <h1>94</h1>
                     <p>Unique Views</p>
                   </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-md-6 col-sm-12">
                   <div class="analytics-value">
                     <h1>143</h1>
                     <p>Video Views</p>
                   </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-md-6 col-sm-12">
                   <div class="analytics-value">
                     <h1>6</h1>
                     <p>BID Reports Downloaded</p>
                   </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-md-6 col-sm-12">
                   <div class="analytics-value">
                     <h1>11</h1>
                     <p>NDA’s Received</p>
                   </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-md-6 col-sm-12">
                   <div class="analytics-value">
                     <h1>3</h1>
                     <p>LOI’s Received</p>
                   </div>
                 </div>
                 
-                </div>
+               
               </div>
             </div>
           </div>

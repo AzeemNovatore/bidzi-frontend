@@ -51,18 +51,70 @@
             </nav>
           </div>
         </header>
-        <div class="banner-section">
+        <div class="banner-section banner-search">
           <div class="container-fluid">
             <div class="banner-content">
-              <h1>Making extraordinary deals is just a click away</h1>
-              <p>It doesn’t get any easier to buy or sell businesses anymore</p>
+              <h1 class="text-center">Search for a Company</h1>
+              <div class="search-box">
+                <input type="search" placeholder="Search here...">
+                <a href="" class="btn transparent">Search</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <!-- main-section -->
       <main id="main">
-        <section class="card-section">
+        <section class="section">
+          <div class="container-fluid">
+            <div class="filter-row row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Industry</label>
+                  <select>
+                    <option value="">Select Any One</option>
+                    <option value="">Graphic Designers</option>
+                    <option value="">Frontend Developer</option>
+                    <option value="">Backend Developer</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Price</label>
+                  <select>
+                    <option value="">Range</option>
+                    <option value="">AED 5 - AED 10</option>
+                    <option value="">AED 5 - AED 10</option>
+                    <option value="">AED 5 - AED 10</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Location</label>
+                  <select>
+                    <option value="">Location</option>
+                    <option value="">France</option>
+                    <option value="">Lahore</option>
+                    <option value="">Pakistan</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="filter-result">
+              <span>15 results found</span>
+              <div class="form-group">
+                <select class="w-auto">
+                  <option>Filter</option>
+                  <option>1</option>
+                  <option>2</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="card-section pt-0">
           <div class="container-fluid">
             <div class="row">
               <div class="col-lg-4 col-md-6 col-sm-12">
@@ -373,16 +425,16 @@
               </div>
             </div>
           </div>
-          <div class="container">
-            <div class="view-button text-center mt-3">
-              <a
-                href="#"
-                class="btn transparent view d-flex justify-content-center align-items-center gap-3 m-auto"
-              >
-                <span>View All</span>
-                <img src="./images/right-arrow.png" alt="right-arrow" />
-              </a>
-            </div>
+          <div class="container-fluid">
+            <nav aria-label="navigation">
+              <ul class="pagination justify-content-center">
+                <li class="page-item"><a class="page-link arrow-icon" href="#"><i class="fas fa-chevron-left"></i></a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link arrow-icon arrow-icon-right" href="#"><i class="fas fa-chevron-right"></i></a></li>
+              </ul>
+            </nav>
           </div>
         </section>
       </main>
