@@ -22259,6 +22259,7 @@ textarea {
   line-height: 15px;
   color: rgba(255, 255, 255, 0.4);
   padding: 20px;
+  border-radius: 10px;
 }
 
 button,
@@ -22286,11 +22287,6 @@ input[type=submit] {
   overflow-y: auto;
   overflow-x: hidden;
 }
-@media screen and (max-width: 1280px) {
-  .main-signup .bidzi-content {
-    padding: 50px 55px 30px 50px;
-  }
-}
 @media (max-width: 767px) {
   .main-signup .bidzi-content {
     padding: 50px 30px 30px 30px;
@@ -22304,13 +22300,6 @@ input[type=submit] {
 }
 .main-signup .bidzi-content .logo {
   margin-bottom: 25px;
-  display: block;
-}
-@media (max-width: 767px) {
-  .main-signup .bidzi-content .logo {
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 .main-signup .bidzi-content .main-heading {
   font-weight: 700;
@@ -22320,28 +22309,11 @@ input[type=submit] {
   margin-bottom: 60px;
   max-width: 449px;
 }
-@media (max-width: 991px) {
-  .main-signup .bidzi-content .main-heading {
-    font-size: 25px;
-  }
-}
-@media (max-width: 767px) {
-  .main-signup .bidzi-content .main-heading {
-    max-width: 100%;
-    margin-bottom: 30px;
-  }
-}
 .main-signup .bidzi-content .grey-box {
   width: 45px;
   height: 45px;
   background: rgba(255, 255, 255, 0.2);
   margin-bottom: 20px;
-}
-@media (max-width: 767px) {
-  .main-signup .bidzi-content .grey-box {
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 .main-signup .bidzi-content .box-desc {
   font-weight: 500;
@@ -22351,16 +22323,6 @@ input[type=submit] {
   margin-bottom: 20px;
   max-width: 481px;
 }
-@media (max-width: 991px) {
-  .main-signup .bidzi-content .box-desc {
-    font-size: 18px;
-  }
-}
-@media (max-width: 767px) {
-  .main-signup .bidzi-content .box-desc {
-    max-width: 100%;
-  }
-}
 .main-signup .signup-input {
   background-color: #11252a;
   height: 100%;
@@ -22368,7 +22330,7 @@ input[type=submit] {
   align-items: center;
   justify-content: center;
 }
-@media (max-width: 991px) {
+@media (max-width: 767px) {
   .main-signup .signup-input {
     padding: 20px 40px;
   }
@@ -22409,7 +22371,6 @@ input[type=submit] {
   width: 33px;
   align-self: baseline;
   height: 33px;
-  accent-color: transparent !important;
 }
 .main-signup .signup-input form .form-group .check-text {
   font-weight: 500;
@@ -22429,20 +22390,10 @@ input[type=submit] {
   letter-spacing: 0.02em;
   color: #000 !important;
 }
-@media (max-width: 639px) {
-  .main-signup .signup-input form .form-group .btn-seller, .main-signup .signup-input form .form-group .btn-buyer {
-    width: 100%;
-  }
-}
 .main-signup .signup-input form .form-group .btn-buyer {
   background: rgba(255, 255, 255, 0.6);
   border: 1px solid #fff;
   color: #fff !important;
-}
-@media (max-width: 639px) {
-  .main-signup .signup-input form .form-group .btn-buyer {
-    width: 100%;
-  }
 }
 .main-signup .signup-input form .form-group .signup-btn {
   background: #c204f1;
@@ -22570,7 +22521,7 @@ input[type=submit] {
   background: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  padding: 25px 20px;
+  padding: 45px 35px;
   border-radius: 10px 10px 0px 0px;
   margin-left: 15px;
   row-gap: 25px;
@@ -22702,6 +22653,7 @@ input[type=submit] {
   color: #74a303;
   border: 1px solid #74a303;
   background: rgba(116, 163, 3, 0.1);
+  border-radius: 50px !important;
 }
 @media (max-width: 767px) {
   .inner-dashboard .dashboard-table .seller-dashboard-table table tbody tr td .accept {
@@ -22981,6 +22933,7 @@ input[type=submit] {
   line-height: 22px;
   letter-spacing: 0.02em;
   color: #fff;
+  font-family: "Montserrat", sans-serif !important;
 }
 .chat-dashboard .chat-content .inner-chat-content.active {
   background: rgba(255, 255, 255, 0.2);
@@ -23017,11 +22970,12 @@ input[type=submit] {
   margin-bottom: 10px;
 }
 .chat-dashboard .chat-content .inner-chat-content .user-name h3 {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 17px;
   line-height: 21px;
   color: #fff;
   margin-bottom: 0;
+  font-family: "Montserrat", sans-serif !important;
 }
 @media (max-width: 639px) {
   .chat-dashboard .chat-content .inner-chat-content .user-name h3 {
@@ -23029,11 +22983,12 @@ input[type=submit] {
   }
 }
 .chat-dashboard .chat-content .inner-chat-content .user-name p {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16.2064px;
   line-height: 20px;
   color: #fff;
   margin-bottom: 0;
+  font-family: "Montserrat", sans-serif !important;
 }
 @media (max-width: 639px) {
   .chat-dashboard .chat-content .inner-chat-content .user-name p {
@@ -23041,11 +22996,12 @@ input[type=submit] {
   }
 }
 .chat-dashboard .chat-content .inner-chat-content .user-message p {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16.2064px;
   line-height: 20px;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 0;
+  font-family: "Montserrat", sans-serif !important;
 }
 @media (max-width: 639px) {
   .chat-dashboard .chat-content .inner-chat-content .user-message p {
@@ -23053,7 +23009,7 @@ input[type=submit] {
   }
 }
 .chat-dashboard .chat-content .inner-chat-content .user-message span {
-  font-weight: 500;
+  font-weight: 700;
   font-size: 16.2064px;
   line-height: 20px;
   color: #fff;
@@ -23063,6 +23019,7 @@ input[type=submit] {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  font-family: "Montserrat", sans-serif !important;
 }
 @media (max-width: 639px) {
   .chat-dashboard .chat-content .inner-chat-content .user-message span {
@@ -23092,9 +23049,10 @@ input[type=submit] {
   }
 }
 .chat-dashboard .user-inbox .inbox-heading h3 {
-  font-weight: 500;
+  font-weight: 700;
   font-size: 26px;
   line-height: 32px;
+  font-family: "Montserrat", sans-serif !important;
   color: #fff;
 }
 @media (max-width: 639px) {
@@ -23151,12 +23109,13 @@ input[type=submit] {
 }
 .chat-dashboard .user-inbox .inbox-chating .inner-inbox-chating ul li {
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 18.21px;
   line-height: 22px;
   color: rgba(255, 255, 255, 0.96);
   margin-bottom: 25px;
   display: flex;
+  font-family: "Montserrat", sans-serif !important;
   flex-direction: column;
   gap: 10px;
   padding: 20px;
@@ -23171,6 +23130,9 @@ input[type=submit] {
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   padding: 20px 0 0 0;
 }
+.chat-dashboard .user-inbox .inbox-chating .chat-search-field .chat-feild {
+  width: 90%;
+}
 @media (max-width: 639px) {
   .chat-dashboard .user-inbox .inbox-chating .chat-search-field {
     padding: 10px;
@@ -23184,9 +23146,13 @@ input[type=submit] {
 }
 .chat-dashboard .user-inbox .inbox-chating .chat-search-field input {
   border: none;
+  width: 100%;
   border-radius: 0px;
   padding: 0;
+  color: #fff;
+  font-weight: 400;
   background: transparent;
+  font-family: "Montserrat", sans-serif !important;
 }
 @media (max-width: 639px) {
   .chat-dashboard .user-inbox .inbox-chating .chat-search-field input {
@@ -23197,12 +23163,14 @@ input[type=submit] {
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
+  font-family: "Montserrat", sans-serif !important;
   color: rgba(255, 255, 255, 0.4);
 }
 .chat-dashboard .user-inbox .inbox-chating .chat-search-field input::placeholder {
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
+  font-family: "Montserrat", sans-serif !important;
   color: rgba(255, 255, 255, 0.4);
 }
 @media (max-width: 639px) {
@@ -23212,6 +23180,99 @@ input[type=submit] {
   .chat-dashboard .user-inbox .inbox-chating .chat-search-field input::placeholder {
     font-size: 12px;
   }
+}
+
+.main-buyer-dashboard {
+  padding: 33px 48px;
+  background-color: transparent !important;
+}
+@media (max-width: 639px) {
+  .main-buyer-dashboard {
+    padding: 10px !important;
+    margin-left: 0 !important;
+  }
+}
+.main-buyer-dashboard .buyer-heading h1 {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 38px;
+  color: #fff;
+  margin-bottom: 5px;
+}
+@media (max-width: 639px) {
+  .main-buyer-dashboard .buyer-heading h1 {
+    font-size: 18px;
+  }
+}
+.main-buyer-dashboard .buyer-heading p {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 10px;
+}
+@media (max-width: 639px) {
+  .main-buyer-dashboard .buyer-heading p {
+    font-size: 18px;
+  }
+}
+.main-buyer-dashboard .buyer-dashboard-table table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 5px 15px;
+}
+.main-buyer-dashboard .buyer-dashboard-table table thead {
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+}
+.main-buyer-dashboard .buyer-dashboard-table table tr th {
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 33px;
+  text-align: center;
+  color: #fff;
+  padding: 25px 20px;
+  white-space: nowrap;
+}
+@media (max-width: 639px) {
+  .main-buyer-dashboard .buyer-dashboard-table table tr th {
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+.main-buyer-dashboard .buyer-dashboard-table table tbody tr td {
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 33px;
+  color: #fff;
+  padding: 25px 20px;
+  border-width: 0px 1px;
+  border-style: solid;
+  white-space: nowrap;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+@media (max-width: 639px) {
+  .main-buyer-dashboard .buyer-dashboard-table table tbody tr td {
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 639px) {
+  .main-buyer-dashboard .buyer-dashboard-table table tbody tr td img {
+    width: 20px;
+    height: 20px;
+  }
+}
+.main-buyer-dashboard .buyer-dashboard-table table tbody tr:nth-child(odd) {
+  background: transparent;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+}
+.main-buyer-dashboard .buyer-dashboard-table table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
 }
 
 body {
@@ -23360,7 +23421,8 @@ img.ful-width {
 
 #wrapper {
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   width: 100%;
   transition: all ease 0.3s;
 }
@@ -23516,7 +23578,7 @@ img.ful-width {
   display: block;
   padding: 10px 0;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 30px;
   color: #fff;
 }
@@ -23579,11 +23641,6 @@ img.ful-width {
     height: 300px;
   }
 }
-@media (max-width: 991px) {
-  .main-header .banner-section .banner-content {
-    text-align: center;
-  }
-}
 @media (max-width: 579px) {
   .main-header .banner-section .banner-content {
     text-align: center;
@@ -23595,12 +23652,6 @@ img.ful-width {
   line-height: 117px;
   color: #fff;
   max-width: 1007.02px;
-}
-@media (max-width: 991px) {
-  .main-header .banner-section .banner-content h1 {
-    font-size: 50.0364px;
-    line-height: 90px;
-  }
 }
 @media (max-width: 579px) {
   .main-header .banner-section .banner-content h1 {
@@ -23614,6 +23665,7 @@ img.ful-width {
   font-size: 31px;
   line-height: 46px;
   color: #fff;
+  max-width: 700px;
 }
 @media (max-width: 579px) {
   .main-header .banner-section .banner-content p {
@@ -23686,7 +23738,7 @@ img.ful-width {
   width: 100%;
 }
 .card-section .card .card-content .card-tag {
-  padding: 18px 0px 0px 22px;
+  padding: 16px 0px 0px 22px;
 }
 @media (max-width: 579px) {
   .card-section .card .card-content .card-tag {
@@ -23720,11 +23772,11 @@ img.ful-width {
 }
 .card-section .card .card-content .card-description .price-card {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   gap: 10px;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
   height: 100%;
 }
@@ -23789,9 +23841,6 @@ img.ful-width {
 #footer {
   position: relative;
   background: #11252a;
-}
-#footer .logo {
-  display: block;
 }
 #footer .container-fluid {
   border-top: 1px solid rgba(255, 255, 255, 0.2);

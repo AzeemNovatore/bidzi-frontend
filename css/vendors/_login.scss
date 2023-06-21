@@ -11,25 +11,15 @@
         padding: 50px 55px 30px 126px;
         overflow-y: auto;
         overflow-x: hidden;
-        @media screen and  (max-width: 1280px){
-            padding: 50px 55px 30px 50px;   
-        }
-
-        @include media("<tablet") {
+        @include media ("<tablet"){
             padding: 50px 30px 30px 30px;
             text-align: center;
         }
-
-        @include media("<phone") {
+        @include media ("<phone"){
             padding: 50px 20px 30px 20px;
         }
         .logo {
             margin-bottom: 25px;
-            display: block;
-            @include media("<tablet") {
-              margin-left: auto;
-              margin-right: auto;
-             }
         }
         .main-heading {
             font-weight: 700;
@@ -38,23 +28,12 @@
             color: $white;
             margin-bottom: 60px;
             max-width: 449px;
-            @include media("<tablet-x") {
-                font-size: 25px;
-                }   
-            @include media("<tablet") {
-                max-width: 100%;
-                margin-bottom: 30px;
-             }
         }
         .grey-box {
             width: 45px;
             height: 45px;
             background: $extra-light;
             margin-bottom: 20px;
-            @include media("<tablet") {
-                margin-left: auto;
-                margin-right: auto;
-            }
         }
         .box-desc {
             font-weight: 500;
@@ -63,12 +42,6 @@
             color: $white;
             margin-bottom: 20px;
             max-width: 481px;
-            @include media("<tablet-x") {
-             font-size: 18px;
-             }
-            @include media("<tablet") {
-               max-width: 100%;
-            }
         }
     }
     .signup-input {
@@ -76,14 +49,14 @@
         height: 100%;
         @include flex-align;
         justify-content: center;
-        @include media("<tablet-x") {
-            padding: 20px 40px;
+        @include media ("<tablet"){
+           padding: 20px 40px;
         }
 
         form {
             max-width: 559px;
             width: 559px;
-            @include media("<tablet") {
+            @include media ("<tablet"){
                 max-width: 100%;
                 width: 100%;
             }
@@ -95,15 +68,18 @@
                     letter-spacing: 0.02em;
                     color: $white;
                     margin-bottom: 10px;
-                    @include media("<tablet") {
-                        font-size: 16px;
+                    @include media ("<tablet"){
+                       font-size: 16px;
                     }
+
                 }
                 input {
                     margin-bottom: 10px;
                 }
                 select {
                     margin-bottom: 15px;
+
+                    
                 }
                 .check {
                     border: 1px solid $white;
@@ -112,7 +88,6 @@
                     width: 33px;
                     align-self: baseline;
                     height: 33px;
-                    accent-color: transparent !important;
                 }
                 .check-text {
                     font-weight: 500;
@@ -131,19 +106,12 @@
                     line-height: 22px;
                     letter-spacing: 0.02em;
                     color: $black !important;
-                    @include media("<phone") {
-                       width: 100%
-                    }
-
                 }
                 .btn-buyer {
                     @extend .btn-seller;
                     background: $light-white;
                     border: 1px solid $white;
                     color: $white !important;
-                    @include media("<phone") {
-                        width: 100%
-                     }
                 }
                 .signup-btn {
                     background: $light-pink;
@@ -164,6 +132,7 @@
                     font-size: 20px;
                     line-height: 30px;
                 }
+              
             }
             .description {
                 font-weight: 400;
@@ -179,14 +148,14 @@
                     top: 50%;
                     width: 44%;
                     height: 0.5px;
-                    background-color: $light-white;
+                    background-color:$light-white;
                 }
-
+        
                 &::before {
                     left: 0;
                     transform: translateY(-50%);
                 }
-
+        
                 &::after {
                     right: 0;
                     transform: translateY(-50%);

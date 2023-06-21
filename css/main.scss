@@ -1,5 +1,4 @@
-$breakpoints: (
-  "xs-phone": 580px,
+$breakpoints: ("xs-phone": 580px,
   "phone": 640px,
   "tablet": 768px,
   "tablet-x": 992px,
@@ -40,6 +39,7 @@ body {
 
   @media only screen and (max-width: 1400px) and (min-width: 360px) {
     padding: 0px 30px;
+
   }
 
   @include media("<phone") {
@@ -161,13 +161,13 @@ img {
 
 #wrapper {
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   width: 100%;
   @include ease;
 
   &.header-fixed {
-    #header {
-    }
+    #header {}
   }
 
   &.nav-active {
@@ -180,8 +180,10 @@ img {
     .sidebar {
       left: 0;
     }
+
     .sidebar-opener {
       left: 250px;
+
       i {
         transform: rotate(180deg);
       }
@@ -279,6 +281,7 @@ img {
   .logo {
     max-width: 170px;
     display: block;
+
     @include media("<tablet-x") {
       display: block;
     }
@@ -322,7 +325,7 @@ img {
       display: block;
       padding: 10px 0;
       font-weight: 400;
-      font-size: 16px;
+      font-size: 20px;
       line-height: 30px;
       color: $white;
 
@@ -387,10 +390,8 @@ img {
     @include media("<xs-phone") {
       height: 300px;
     }
+
     .banner-content {
-      @include media("<tablet-x") {
-        text-align: center;
-      }
       @include media("<xs-phone") {
         text-align: center;
       }
@@ -401,10 +402,6 @@ img {
         line-height: 117px;
         color: $white;
         max-width: 1007.02px;
-        @include media("<tablet-x") {
-          font-size: 50.0364px;
-          line-height: 90px;
-        }
 
         @include media("<xs-phone") {
           font-size: 30.0364px;
@@ -418,6 +415,7 @@ img {
         font-size: 31px;
         line-height: 46px;
         color: $white;
+        max-width: 700px;
 
         @include media("<xs-phone") {
           font-size: 16px;
@@ -425,24 +423,29 @@ img {
         }
       }
     }
+
     &.banner-search {
       align-items: flex-start;
       height: auto;
+
       h1 {
         font-weight: 700;
         font-size: 48px;
         line-height: 72px;
         margin: 0 auto 38px;
       }
+
       .search-box {
         max-width: 705px;
         margin: 0 auto 45px;
         display: flex;
+
         .btn {
           height: 64px !important;
           line-height: 64px !important;
         }
       }
+
       input[type="search"] {
         background: rgba(255, 255, 255, 0.1);
         border-radius: 5px 0px 0px 5px;
@@ -494,7 +497,7 @@ img {
       width: 100%;
 
       .card-tag {
-        padding: 18px 0px 0px 22px;
+        padding: 16px 0px 0px 22px;
 
         @include media("<xs-phone") {
           padding: 20px 20px;
@@ -526,11 +529,11 @@ img {
 
         .price-card {
           display: flex;
-          flex-direction: column;
-          align-items: center;
           justify-content: center;
+          align-items: center;
+          flex-direction: column;
           gap: 10px;
-          padding: 10px;
+          padding: 20px;
           text-align: center;
           height: 100%;
 
@@ -581,12 +584,14 @@ img {
   padding: 30px 0;
   @include flex-align;
   justify-content: space-between;
+
   span {
     font-weight: 400;
     font-size: 16px;
     line-height: 46px;
     color: rgba(255, 255, 255, 0.4);
   }
+
   select,
   .form-select {
     min-width: 192px;
@@ -599,55 +604,64 @@ img {
 #footer {
   position: relative;
   background: $primary-black;
-  .logo {
-    display: block;
-  }
+
   .container-fluid {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
+
     .footer-left {
       padding: 100px 0px 140px 0px;
+
       @include media("<tablet") {
         padding: 50px 0px 0px 0px;
         text-align: center;
       }
+
       p {
         font-weight: 400;
         font-size: 25px;
         line-height: 38px;
         color: $light-white;
         margin-top: 25px;
+
         @include media("<tablet") {
           font-size: 14px;
           line-height: 24px;
         }
       }
     }
+
     .footer-right {
       display: flex;
       justify-content: space-between;
       padding: 100px 0px;
+
       @include media("<widescreen") {
         gap: 50px;
       }
+
       @include media("<tablet") {
         padding: 10px 0px 30px 0px;
         gap: 30px;
       }
+
       .faq,
       .company {
         @include media("<tablet") {
           text-align: right;
         }
+
         h1 {
           font-weight: 500;
           font-size: 34.6193px;
           line-height: 52px;
           text-transform: uppercase;
           color: $white;
+
           @include media("<widescreen") {
             font-size: 28px;
             line-height: 45px;
           }
+
           @include media("<tablet") {
             font-size: 20px !important;
             line-height: 40px;
@@ -657,25 +671,32 @@ img {
     }
   }
 }
+
 .footer-links {
   list-style: none;
   padding: 0;
+
   li {
     padding: 10px 0px;
+
     @include media("<tablet") {
       padding: 5px 0px;
     }
+
     a {
       font-weight: 400;
       font-size: 25px;
       line-height: 38px;
       color: $light-white;
+
       @include media("<widescreen") {
         font-size: 20px;
       }
+
       @include media("<tablet") {
         font-size: 16px;
       }
+
       &:hover,
       &.active {
         color: $primary-yellow;
@@ -817,8 +838,9 @@ img {
         color: #fff !important;
       }
     }
+
     a {
-      background-color: #293b3f !important ;
+      background-color: #293b3f !important;
       width: 30px;
       height: 30px;
       border-radius: 50% !important;
@@ -828,6 +850,7 @@ img {
       align-items: center;
       justify-content: center;
       color: #fff;
+
       &:hover,
       &:active {
         background: $light-pink !important;
@@ -836,11 +859,13 @@ img {
     }
   }
 }
+
 .page-item {
   margin-left: 30px;
 }
+
 .arrow-icon {
-  background-color: #293b3f !important ;
+  background-color: #293b3f !important;
   width: 30px;
   height: 30px;
   border-radius: 50% !important;
@@ -850,12 +875,14 @@ img {
   align-items: center;
   justify-content: center;
   margin-right: 40px;
+
   i {
     color: #fff;
   }
 }
+
 .arrow-icon-right {
   margin-left: 40px !important;
 }
-@include media("<tablet") {
-}
+
+@include media("<tablet") {}

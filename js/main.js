@@ -494,7 +494,29 @@ function initMobileNav() {
   };
 })(jQuery);
 
-//vide play or pause button
+// hide old tab
+resizeHolder(oldTab, true);
+contentTabsEffect[options.effect].hide({
+  speed: options.animSpeed,
+  tab: oldTab,
+  complete: function () {
+    // show current tab
+    resizeHolder(newTab.removeClass(tabHiddenClass).width(""));
+    contentTabsEffect[options.effect].show({
+      speed: options.animSpeed,
+      tab: newTab,
+      complete: function () {
+        if (!oldTab.is(newTab)) {
+          oldTab.width(oldTab.width()).addClass(tabHiddenClass);
+        }
+        animating = false;
+        resizeHolder(newTab, false);
+        autoRotate();
+        $(window).trigger("resize");
+      },
+    });
+  },
+});
 
 var playButton = document.getElementById("play_button");
 // Event listener for the play/pause button
