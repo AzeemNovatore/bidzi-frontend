@@ -52,6 +52,7 @@
             margin: 0;
             border-radius: 0 40px 40px 0;
             @include ease;
+            background: linear-gradient(298.88deg, #674833 38.54%, #2e312d 98.54%);
         }
 
         ul {
@@ -435,6 +436,7 @@
             border-radius: 10px;
             padding: 19px;
             margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif !important;
 
             @include media("<phone") {
                 font-size: 14px;
@@ -445,6 +447,7 @@
         textarea {
             margin-bottom: 19px;
             border: none;
+            font-family: 'Montserrat', sans-serif !important;
 
             @include media("<phone") {
                 font-size: 14px;
@@ -461,7 +464,7 @@
     height: 100%;
 
     @include media("<phone") {
-        padding: 10px;
+        padding: 10px 20px;
     }
 
     h1 {
@@ -672,7 +675,7 @@
                 font-size: 26px;
                 line-height: 32px;
                 font-family: 'Montserrat', sans-serif !important;
-
+                margin: 0;
                 color: $white;
 
                 @include media("<phone") {
@@ -918,6 +921,290 @@
             }
         }
     }
+
+
+}
+
+// LOL Section
+.Lol-main-wrapper {
+    padding: 20px 40px !important;
+
+    @include media("<phone") {
+
+        padding: 10px !important;
+    }
+
+    .lol-wrapper {
+        .main-wrapper-question {
+            min-height: 650px;
+            overflow: auto;
+            height: 650px;
+
+            .lol-question-answer {
+
+
+                .lol-question {
+
+                    padding: 43px 20px;
+                    border-radius: 20px;
+                    background: rgba(0, 0, 0, 0.20);
+                    backdrop-filter: blur(20px);
+                    margin-bottom: 10px;
+
+                    @include media("<phone") {
+
+                        padding: 20px 10px !important;
+                    }
+
+                    p {
+                        color: $white;
+                        font-size: 17px;
+                        font-family: 'Montserrat', sans-serif !important;
+                        font-weight: 700;
+                        margin-bottom: 0;
+                        line-height: 30px;
+
+                        @include media("<phone") {
+
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+            }
+
+            .lol-answer {
+                margin-bottom: 10px;
+
+                textarea {
+                    height: 108px;
+                    border-radius: 20px;
+                    background: rgba(0, 0, 0, 0.20);
+                    backdrop-filter: blur(20px);
+                    border: none;
+                    font-family: 'Montserrat', sans-serif !important;
+                    font-style: italic;
+                    color: #8F8F8F;
+                    font-size: 17px;
+                    padding: 43px 20px;
+
+                    @include media("<phone") {
+
+                        padding: 20px 10px !important;
+                    }
+
+                    &::placeholder {
+                        font-family: 'Montserrat', sans-serif !important;
+                        font-style: italic;
+                        display: flex;
+                        align-items: center;
+                        color: #8F8F8F;
+                        font-size: 17px;
+                        justify-content: center;
+                    }
+
+                }
+            }
+
+        }
+
+        .lol-filter {
+            margin-bottom: 30px;
+
+            p {
+                font-size: 18px;
+                font-weight: 500;
+                font-family: 'Montserrat', sans-serif !important;
+                margin-bottom: 0;
+                color: $white;
+            }
+
+            a {
+                font-size: 18px;
+                font-weight: 500;
+                font-family: 'Montserrat', sans-serif !important;
+                margin-bottom: 0;
+                color: $white;
+                padding: 19px;
+                background-color: #253337;
+                border-radius: 10px;
+                display: flex;
+                gap: 30px;
+            }
+        }
+
+
+
+    }
+
+    .lol-details {
+        padding: 0;
+
+        .user-img-chats {
+
+            .lol-user-img {
+                position: relative;
+
+                img {
+                    @include media("<phone") {
+
+                        height: 60px;
+                        width: 60px;
+                    }
+                }
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    right: 0px;
+                    top: 2px;
+                    background: #93BF28;
+                    width: 18px;
+                    height: 18px;
+                    border-radius: 50%;
+                }
+            }
+
+
+        }
+
+        .lol-detail-content {
+            min-height: 650px;
+            overflow: auto;
+            height: 650px;
+
+            img {
+                width: 100%;
+                padding: 10px;
+            }
+        }
+
+    }
+
+}
+
+.custom-scrollbar {
+    &::-webkit-scrollbar {
+        width: 5px;
+        scrollbar-gutter: stable;
+        max-height: 20px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgba(74, 75, 77, 0.1);
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #C204F1;
+    }
+
+    &::-webkit-scrollbar:horizontal {
+        max-height: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb:horizontal {
+        border-radius: 10px;
+        background-color: #C204F1;
+        width: auto;
+    }
+}
+
+// Resource Section
+.resource-tabs {
+    .nav-tabs {
+        border: none;
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.40);
+            color: $white;
+            font-size: 20px;
+            font-family: $popins;
+            font-weight: 500;
+
+            &:nth-child(1) {
+                background: linear-gradient(90deg, #C23289 0%, #6D1CD9 100%);
+
+            }
+
+            &:nth-child(2) {
+                background: #1E75DE;
+
+            }
+
+            &:nth-child(3) {
+                background: #93BF28;
+
+
+            }
+
+            &:nth-child(4) {
+                background: #BF9528;
+
+            }
+        }
+    }
+
+    .resource-card {
+        margin-bottom: 20px;
+
+        img {
+            width: 100%;
+        }
+
+        .card-wrapper {
+            @include media("<phone") {
+
+                padding: 10px 0 !important;
+
+            }
+
+
+
+            p {
+                color: $white;
+                font-size: 20px;
+                font-family: $popins;
+                font-weight: 600;
+                margin-bottom: 0px;
+                line-height: 32px;
+                display: block;
+                position: relative;
+
+                @include media("<phone") {
+
+                    font-size: 16px;
+
+                }
+
+            }
+
+            a {
+
+                color: $white;
+                font-size: 20px;
+                font-family: $popins;
+                padding: 18px 25px;
+                border-radius: 15px;
+                background: rgba(0, 0, 0, 0.60);
+                backdrop-filter: blur(20px);
+
+                @include media("<phone") {
+
+                    font-size: 16px;
+
+                }
+            }
+        }
+
+
+    }
+
 
 
 }

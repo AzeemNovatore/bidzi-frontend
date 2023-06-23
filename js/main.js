@@ -535,3 +535,24 @@ playButton.addEventListener("click", function () {
     playButton.innerHTML = '<i class="fas fa-play"></i>';
   }
 });
+
+// accordion js
+const accordionItems = document.querySelectorAll(".accordion-item");
+
+accordionItems.forEach((item) => {
+  const header = item.querySelector(".accordion-header");
+  const content = item.querySelector(".accordion-content");
+  const arrow = header.querySelector(".arrow");
+
+  header.addEventListener("click", () => {
+    item.classList.toggle("active");
+
+    if (item.classList.contains("active")) {
+      content.style.display = "block";
+      arrow.classList.add("up");
+    } else {
+      content.style.display = "none";
+      arrow.classList.remove("up");
+    }
+  });
+});

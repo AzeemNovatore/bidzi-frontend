@@ -1,4 +1,5 @@
-$breakpoints: ("xs-phone": 580px,
+$breakpoints: (
+  "xs-phone": 580px,
   "phone": 640px,
   "tablet": 768px,
   "tablet-x": 992px,
@@ -25,6 +26,7 @@ $breakpoints: ("xs-phone": 580px,
 @import "vendors/login";
 @import "vendors/sociallinks";
 @import "vendors/style";
+@import "vendors/detail";
 
 body {
   font-size: 14px;
@@ -34,12 +36,19 @@ body {
   background: $primary-black;
 }
 
+.min-container {
+  max-width: 1080px;
+}
+.max-container {
+  max-width: 1440px;
+  margin: auto;
+}
+
 .container-fluid {
   padding: 0px 126px;
 
   @media only screen and (max-width: 1400px) and (min-width: 360px) {
     padding: 0px 30px;
-
   }
 
   @include media("<phone") {
@@ -161,13 +170,28 @@ img {
 
 #wrapper {
   position: relative;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
   width: 100%;
   @include ease;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 875px;
+    left: -481.53px;
+    width: 700px;
+    height: 700px;
+    background-image: url("../images/bg-circle.png");
+    background-size: contain;
+    background-repeat: repeat;
+    background-position: center;
+    z-index: 1;
+  }
 
   &.header-fixed {
-    #header {}
+    #header {
+    }
   }
 
   &.nav-active {
@@ -325,7 +349,7 @@ img {
       display: block;
       padding: 10px 0;
       font-weight: 400;
-      font-size: 20px;
+      font-size: 16px;
       line-height: 30px;
       color: $white;
 
@@ -390,8 +414,11 @@ img {
     @include media("<xs-phone") {
       height: 300px;
     }
-
     .banner-content {
+      @include media("<tablet-x") {
+        text-align: center;
+      }
+
       @include media("<xs-phone") {
         text-align: center;
       }
@@ -402,6 +429,11 @@ img {
         line-height: 117px;
         color: $white;
         max-width: 1007.02px;
+
+        @include media("<tablet-x") {
+          font-size: 50.0364px;
+          line-height: 90px;
+        }
 
         @include media("<xs-phone") {
           font-size: 30.0364px;
@@ -415,7 +447,6 @@ img {
         font-size: 31px;
         line-height: 46px;
         color: $white;
-        max-width: 700px;
 
         @include media("<xs-phone") {
           font-size: 16px;
@@ -453,6 +484,105 @@ img {
         line-height: 45px;
       }
     }
+
+    &.buyer-bussiness {
+      padding: 90px 0px 60px 0px;
+      width: 100%;
+
+      @include media("<phone") {
+        padding: 45px 0px 40px 0px;
+      }
+
+      .buyer-bussines-title {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 72px;
+        max-width: 790px;
+        color: $white;
+
+        @include media("<phone") {
+          font-size: 35px;
+          line-height: 45px;
+          margin-bottom: 15px;
+        }
+      }
+
+      .buyer-desc {
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 184%;
+        color: $xl-extra-grey;
+        margin-bottom: 52px !important;
+        max-width: 1171px;
+        margin: auto;
+
+        @include media("<phone") {
+          font-size: 20px;
+          line-height: 30px;
+          margin-bottom: 20px !important;
+        }
+      }
+
+      .btn-buyer-bussiness {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 30px;
+        color: $white;
+        border: 1px solid $white;
+        border-radius: 5px;
+        background: transparent;
+
+        &:hover {
+          background: $primary-yellow;
+        }
+
+        @include media("<phone") {
+          font-size: 16px;
+          line-height: 25px;
+          width: 100%;
+        }
+      }
+    }
+    &.general-faq {
+      padding: 30px 0px 67px 0px;
+      .buyer-desc {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 20px;
+        margin-bottom: 26px !important;
+      }
+      .search-box {
+        position: relative;
+        margin: 0 auto 0px;
+        &::after {
+          content: "";
+          background-image: url("../images/search-icon.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          position: absolute;
+          top: 50%;
+          right: 20px;
+          transform: translateY(-50%);
+          width: 20px;
+          height: 20px;
+        }
+        input {
+          border-radius: 5px 0px 0px 5px;
+          padding-right: 40px;
+          background: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+  }
+}
+
+.buyer-desc {
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 184%;
+  color: $xl-extra-grey;
+
+  @include media("<phone") {
+    font-size: 20px;
   }
 }
 
@@ -463,6 +593,228 @@ img {
   background: $primary-black;
 }
 
+section,
+.section {
+  position: relative;
+  z-index: 2;
+}
+
+// buyer-journey
+.buyer-journey-section {
+  padding: 80px 0px 120px 0px;
+
+  @include media("<tablet") {
+    padding: 50px 0px 40px 0px;
+  }
+
+  @include media("<phone") {
+    padding: 30px 0px 20px 0px;
+  }
+
+  .img-box {
+    margin-top: 90px;
+
+    @include media("<tablet") {
+      margin-top: 40px;
+    }
+
+    @include media("<phone") {
+      margin-top: 25px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.bid-report-section {
+  background: $primary-gradiant;
+  padding: 120px 0px;
+  text-align: center;
+
+  @include media("<tablet") {
+    padding: 60px 10px;
+  }
+
+  @include media("<phone") {
+    padding: 35px 10px;
+  }
+}
+
+.member-ship-section {
+  padding: 80px 0px;
+
+  @include media("<tablet") {
+    padding: 50px 10px;
+  }
+
+  @include media("<phone") {
+    padding: 30px 10px;
+  }
+}
+
+.bidzi-card {
+  background: $primary-gradiant;
+}
+
+.listing-card,
+.bidzi-card {
+  border-radius: 20px;
+  padding: 42px 0px;
+  margin: 0px 10px;
+  @include media("<tablet") {
+    padding: 22px 0px;
+  }
+}
+
+.card-desc {
+  color: $white;
+  text-align: center;
+  font-size: 27.85px;
+  font-weight: 500;
+
+  @include media("<tablet") {
+    font-size: 20px;
+  }
+}
+
+.card-main-title {
+  color: $white;
+  text-align: center;
+  font-size: 27.85px;
+  font-family: Poppins;
+  font-weight: 700;
+
+  @include media("<tablet") {
+    font-size: 20px;
+  }
+}
+
+.card-title {
+  color: $white;
+  text-align: center;
+  font-size: 46.583px;
+  font-weight: 700;
+  margin: 18px 0px;
+
+  @include media("<tablet") {
+    font-size: 36px;
+    max-width: 100% !important;
+  }
+  @include media("<phone") {
+    font-size: 25px;
+  }
+}
+
+.btn-listing-card {
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: #c204f1;
+  width: 90%;
+  color: $white;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 25px;
+
+  &:hover {
+    background: transparent;
+    color: $white;
+  }
+}
+
+.listing-items {
+  list-style: none;
+  padding: 0px 20px;
+
+  .free-item {
+    text-align: left !important;
+    color: $white;
+    padding: 10px 10px 10px 55px;
+    text-align: center;
+    font-size: 18.813px;
+    top: 0;
+    font-weight: 500;
+    line-height: 30px;
+    position: relative;
+    @include media("<phone") {
+      font-size: 18px;
+    }
+    &::before {
+      content: "";
+      border-radius: 300px;
+      position: absolute;
+      background: #c204f1;
+      left: 0;
+      top: 10%;
+      width: 40px;
+      height: 40px;
+      background-image: url("../images/tik-items.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 20px;
+    }
+  }
+
+  .paid-item {
+    @extend .free-item;
+    @include media("<phone") {
+      font-size: 18px;
+    }
+    &::before {
+      content: "";
+      border-radius: 300px;
+      position: absolute;
+      background: #3e3e3e;
+      left: 0;
+      top: 10%;
+      width: 40px;
+      height: 40px;
+      background-image: url("../images/tik-items.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 20px;
+    }
+  }
+}
+
+.sub-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 56px;
+  margin-bottom: 15px !important;
+  color: $white;
+
+  @include media("<tablet") {
+    font-size: 25px;
+    max-width: 100% !important;
+  }
+  @include media("<phone") {
+    font-size: 22px;
+  }
+}
+
+.sub-desc {
+  font-weight: 400;
+  font-size: 25px;
+  color: $xxl-extra-grey;
+  line-height: 184%;
+  max-width: 957px;
+  margin: auto;
+
+  @include media("<tablet") {
+    font-size: 20px;
+    max-width: 100% !important;
+  }
+  @include media("<phone") {
+    font-size: 18px;
+  }
+}
+
+.seller-steps {
+  max-width: 100% !important;
+}
+// faq
+.accordion-section {
+}
 // car-styling
 .card-section {
   padding: 95px 0px;
@@ -497,7 +849,7 @@ img {
       width: 100%;
 
       .card-tag {
-        padding: 16px 0px 0px 22px;
+        padding: 18px 0px 0px 22px;
 
         @include media("<xs-phone") {
           padding: 20px 20px;
@@ -529,11 +881,11 @@ img {
 
         .price-card {
           display: flex;
-          justify-content: center;
-          align-items: center;
           flex-direction: column;
+          align-items: center;
+          justify-content: center;
           gap: 10px;
-          padding: 20px;
+          padding: 10px;
           text-align: center;
           height: 100%;
 
@@ -604,6 +956,10 @@ img {
 #footer {
   position: relative;
   background: $primary-black;
+
+  .logo {
+    display: block;
+  }
 
   .container-fluid {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -885,4 +1241,5 @@ img {
   margin-left: 40px !important;
 }
 
-@include media("<tablet") {}
+@include media("<tablet") {
+}

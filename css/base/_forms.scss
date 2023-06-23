@@ -35,12 +35,11 @@ textarea,
 select {
   -webkit-border-radius: 0;
   height: 52px;
-  line-height: 64px;
   width: 100%;
   padding: 10px 10px;
   font-weight: 500;
   font-size: 18px;
-  line-height: 22px;
+  line-height: 32px !important;
   color: $light-white;
   letter-spacing: 0.02em;
   background-color: $primary-black;
@@ -57,10 +56,11 @@ select {
     box-shadow: none;
     outline: none;
     border-color: $primary-yellow !important;
-    color: $light-white;
+    color: $white;
 
     @include placeholder {
       color: $light-white;
+      line-height: 32px !important;
     }
   }
 
